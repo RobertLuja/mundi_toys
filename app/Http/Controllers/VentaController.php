@@ -181,7 +181,7 @@ class VentaController extends Controller
                 "message" => "Cliente no encontrado",
             ]);
         }
-        if(Role::find($cliente->rol)->nombre != RoleEnum::Cliente->value){
+        if(Role::find($cliente->rol)->id != RoleEnum::Cliente->value){
             return response()->json([
                 "status" => 400,
                 "message" => "El usuario no es un cliente",
