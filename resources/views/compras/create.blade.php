@@ -162,7 +162,7 @@
             }
             
             sendData(
-                "../compras/guardarCompra",
+                `${appUrl}/compras/guardarCompra`,
                 miCompra
             )
             .then(res => res.json())

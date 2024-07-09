@@ -104,7 +104,7 @@
         if (query.length >= 2) { // Realizar la búsqueda solo si se han ingresado al menos 2 caracteres
 
             sendData(
-                "clientes/buscar",
+                `${appUrl}/clientes/buscar`,
                 {
                 "query": query
                 }

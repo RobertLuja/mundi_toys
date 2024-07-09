@@ -15,7 +15,7 @@
     <script>
         
         sendData(
-            '/categorias/cantidadProductos',
+            `${appUrl}/categorias/cantidadProductos`,
             {
                 data: "true"
             }

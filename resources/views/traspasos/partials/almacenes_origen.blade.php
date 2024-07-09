@@ -47,7 +47,7 @@
             return;
         }
         sendData(
-            "../almacenes/buscarAlmacenProductos",
+            `${appUrl}/almacenes/buscarAlmacenProductos`,
             {
             "query": almacenId
             }

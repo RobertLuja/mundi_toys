@@ -42,7 +42,7 @@
             return;
         };
         sendData(
-            "../productos/buscarById",
+            `${appUrl}/productos/buscarById`,
             {
             "query": productoId
             }

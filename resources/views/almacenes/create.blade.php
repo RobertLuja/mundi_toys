@@ -83,7 +83,7 @@
 
             var sucursalId = sucursalSelect.value;
             sendData(
-                "../sucursals/buscarById",
+                `${appUrl}/sucursals/buscarById`,
                 {
                 "query": sucursalId
                 }

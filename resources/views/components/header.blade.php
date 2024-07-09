@@ -73,7 +73,7 @@
             return;
         }
         sendData(
-            "/funcionalidades/buscarByName",
+            `${appUrl}/funcionalidades/buscarByName`,
             {
             "nombre": searchFuncionalidad.value
             }

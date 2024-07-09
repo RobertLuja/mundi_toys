@@ -43,7 +43,7 @@
             return;
         }
         sendData(
-            "../almacenes/buscarById",
+            `${appUrl}/almacenes/buscarById`,
             {
             "query": almacenId
             }

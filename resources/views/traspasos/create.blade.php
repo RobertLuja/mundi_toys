@@ -153,7 +153,7 @@
             }
 
             sendData(
-                "../traspasos/detalleTraspaso",
+                `${appUrl}/traspasos/detalleTraspaso`,
                 { 
                     "almacenOrigenId": almacenOrigenSelect.value,
                     "productoId": productoId,
@@ -205,7 +205,7 @@
             }
             
             sendData(
-                "../traspasos/guardarTraspaso",
+                `${appUrl}/traspasos/guardarTraspaso`,
                 miTraspaso
             )
             .then(res => res.json())

@@ -129,7 +129,7 @@
             containerCreateCarrito.style.display = "none";
 
             sendData(
-                "../ventas/pagarCarrito",
+                `${appUrl}/ventas/pagarCarrito`,
                 {
                 "id_cliente": parseInt(document.getElementById("idCliente").value), 
                 "detalleCarrito": productsInCart
@@ -143,7 +143,7 @@
                     containerAlert.innerHTML = showAlertError("Ventas", result.message);
                     containerCreateCarrito.style.display = "block";
                 }else if(result.status == 201){
-                    window.location.href = `/ventas/${result.data.id}`
+                    window.location.href = `${appUrl}/ventas/${result.data.id}`
                 }
 
             })
@@ -176,7 +176,7 @@
                 // console.log("id almacen: ", almacenSelect.value);
 
                 sendData(
-                    "../productos/buscarByName",
+                    `${appUrl}/productos/buscarByName`,
                     {
                     "query": query,
                     "id_almacen": parseInt(almacenSelect.value)

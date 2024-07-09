@@ -47,7 +47,7 @@
             return;
         };
         sendData(
-            "../productos/buscarById",
+            `${appUrl}/productos/buscarById`,
             {
             "query": {
                 "id_producto": productoId,

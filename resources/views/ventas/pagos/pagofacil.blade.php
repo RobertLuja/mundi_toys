@@ -77,7 +77,7 @@
         
         qrImgPagoFacilLoad.textContent = "Generando QR...";
         sendData(
-            "/pagofacil/generarQR",
+            `${appUrl}/pagofacil/generarQR`,
             {
                 "id_venta": valueIdVenta
             }
@@ -110,7 +110,7 @@
     btnVerificarPago.addEventListener("click", function() {
         const valueIdVenta = parseInt(idVenta.textContent);
         sendData(
-            "/pagofacil/consultarEstado",
+            `${appUrl}/pagofacil/consultarEstado`,
             {
                 "id_venta": valueIdVenta
             }
