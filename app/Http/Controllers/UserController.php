@@ -92,7 +92,8 @@ class UserController extends Controller
         Gate::authorize("update");
         $user = User::find($id);
         $user->update($request->all());
-
+        $user->roles()->sync([$request->rol]);
+        
         return redirect()->route("users.index")->with("info", "Usuario con ci: $user->ci actualizado!!!");
     }
 
