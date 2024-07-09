@@ -100,8 +100,8 @@
                     <select class="form-control @error('rol') is-invalid @enderror" id="rol" name="rol" required>
                         @foreach ($roles as $rol)
                             <option 
-                                value="{{ $rol->nombre }}"
-                                {{ $user->rol === $rol->nombre ? 'selected' : '' }}
+                                value="{{ $rol->id }}"
+                                {{ $user->rol == $rol->id ? 'selected' : '' }}
                                 >{{$rol->nombre}}
                             </option>
                         @endforeach
