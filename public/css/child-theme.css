@@ -1,0 +1,118 @@
+/* Temas orientada a niños */
+
+@import url("variables.css");
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1.child-theme, h2.child-theme, h3.child-theme, h4.child-theme, h5.child-theme {
+    color: var(--child-primary-color-2);
+}
+
+/*-----------------sidenav initial config */
+#sidenav.child-theme {
+    background-color: var(--child-primary-color);
+    font-family: var(--font-georgia) !important;
+}
+
+.sidenav__btn__subitem.child-theme {
+    color: var(--white-color-2);
+}
+
+.sidenav__btn__subitem.child-theme:hover {
+    color: var(--dark-color-2);    
+}
+/*-----------------end sidenav initial setup*/
+
+
+/*-----------------header initial config */
+#header.child-theme {
+    font-family: var(--font-georgia);
+}
+
+#header.child-theme > div > #toggleButton {
+    background-image: url("../images/menu-50.png");
+}
+
+.dropdown__item.child-theme:hover {
+    background-color: var(--child-primary-color-4);
+    border: 1px solid var(--child-primary-color-2);
+}
+/*-----------------end header initial setup*/
+
+
+
+/*-----------------main initial config */
+#main.child-theme {
+    font-family: var(--font-georgia);
+}
+/*-----------------end main initial setup*/
+
+
+
+/*-----------------footer initial config */
+#footer.child-theme {
+    font-family: var(--font-georgia);
+}
+/*-----------------footer initial config */
+
+/*----------------- Inputs ---------------- */
+input[type=text].child-theme:focus,
+input[type=number].child-theme:focus,
+input[type=password].child-theme:focus,
+input[type=date].child-theme:focus,
+input[type=mail].child-theme:focus {
+    border: 2px solid var(--child-primary-color-3);
+    box-shadow: 0 0 4px var(--child-primary-color-2);
+}
+
+select.child-theme:focus {
+    border: 2px solid var(--child-primary-color-3) !important;
+    box-shadow: 0 0 4px var(--child-primary-color-2) !important;
+}
+
+textarea.child-theme:focus {
+    border: 2px solid var(--child-primary-color-3) !important;
+    box-shadow: 0 0 4px var(--child-primary-color-2) !important;
+}
+/*----------------- End inputs ---------------- */
+
+
+/*-------------------Pagination------------------*/
+.page__link.child-theme {
+    border: 1px solid var(--child-primary-color-3) !important;
+}
+
+.page__link.child-theme:hover {
+    color: var(--child-primary-color-2) !important;
+    background-color: var(--child-primary-color-3) !important;
+}
+
+.page__link.child-theme:active {
+    box-shadow: 0 0 4px var(--child-primary-color-2) !important;
+}
+/*-------------------End Pagination------------------*/
+
+/*---------------------Buttons------------------------*/
+.btn__primary.child-theme {
+    background-color: #2071f5;
+}
+
+.btn__primary.child-theme:hover:not([disabled]) {
+    background-color: #0362fc;
+}
+/*---------------------End Buttons------------------------*/
+
+/*-------------------Tables---------------------------*/
+.table-head.child-theme {
+    background-color: var(--child-primary-color-3);
+    border-bottom: hidden;
+}
+
+.table-head.child-theme tr {
+    color: var(--child-primary-color);
+}
+
+/*-------------------End Tables---------------------------*/

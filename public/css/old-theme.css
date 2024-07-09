@@ -1,0 +1,138 @@
+/* Temas orientada a adultos */
+
+@import url("variables.css");
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1.old-theme, h2.old-theme, h3.old-theme, h4.old-theme, h5.old-theme {
+    color: var(--old-primary-color-2);
+}
+
+/*-----------------sidenav initial config */
+#sidenav.old-theme {
+    background-color: var(--old-primary-color);
+    font-family: var(--font-system-ui) !important;
+    font-size: 18px;
+}
+
+.accordion-button.old-theme.collapsed {
+    color: var(--white-color-2) !important;
+    font-size: 18px !important;
+}
+
+.accordion-button.old-theme:not(.collapsed) {
+    color: var(--white-color-2) !important;
+}
+
+.sidenav__btn__subitem.old-theme {
+    color: var(--white-color-2);
+}
+
+.sidenav__btn__subitem.old-theme:hover {
+    color: var(--dark-color-2);
+}
+/*-----------------end sidenav initial setup*/
+
+
+/*-----------------header initial config */
+#header.old-theme {
+    font-family: var(--font-system-ui);
+    letter-spacing: 1.2px;
+    font-size: 18px;
+}
+
+#header.old-theme > div > #toggleButton {
+    background-image: url("../images/menu-48.png");
+}
+
+.dropdown__item.old-theme:hover {
+    background-color: var(--old-primary-color-4);
+    border: 1px solid var(--old-primary-color-2);
+}
+/*-----------------end header initial setup*/
+
+
+
+/*-----------------main initial config */
+#main.old-theme {
+    font-family: var(--font-system-ui);
+}
+
+#main.old-theme > * {
+    font-family: var(--font-system-ui);
+    letter-spacing: 1.2px;
+    font-size: 18px;
+}
+/*-----------------end main initial setup*/
+
+
+
+/*-----------------footer initial config */
+#footer.old-theme {
+    font-family: var(--font-system-ui);
+    letter-spacing: 1.2px;
+    font-size: 18px;
+}
+/*-----------------footer initial config */
+
+/*----------------- Inputs ---------------- */
+input[type=text].old-theme:focus,
+input[type=number].old-theme:focus,
+input[type=password].old-theme:focus,
+input[type=date].old-theme:focus,
+input[type=mail].old-theme:focus {
+    border: 2px solid var(--old-primary-color-3);
+    box-shadow: 0 0 4px var(--old-primary-color-2);
+}
+
+select.old-theme:focus {
+    border: 2px solid var(--old-primary-color-3) !important;
+    box-shadow: 0 0 4px var(--old-primary-color-2) !important;
+}
+
+textarea.old-theme:focus {
+    border: 2px solid var(--old-primary-color-3) !important;
+    box-shadow: 0 0 4px var(--old-primary-color-2) !important;
+}
+/*----------------- End inputs ---------------- */
+
+
+/*-------------------Pagination------------------*/
+.page__link.old-theme {
+    border: 1px solid var(--old-primary-color-3) !important;
+}
+
+.page__link.old-theme:hover {
+    color: var(--old-primary-color-2) !important;
+    background-color: var(--old-primary-color-3) !important;
+}
+
+.page__link.old-theme:active {
+    box-shadow: 0 0 4px var(--old-primary-color-2) !important;
+}
+/*-------------------End Pagination------------------*/
+
+/*---------------------Buttons------------------------*/
+.btn__primary.old-theme {
+    background-color: #2071f5;
+}
+
+.btn__primary.old-theme:hover:not([disabled]) {
+    background-color: #0362fc;
+}
+/*---------------------End Buttons------------------------*/
+
+/*-------------------Tables---------------------------*/
+.table-head.old-theme {
+    background-color: var(--old-primary-color-3);
+    border-bottom: hidden;
+}
+
+.table-head.old-theme tr {
+    color: var(--old-primary-color);
+}
+
+/*-------------------End Tables---------------------------*/

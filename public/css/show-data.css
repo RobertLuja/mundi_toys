@@ -1,0 +1,22 @@
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-input-label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.form-input {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--dark-color-3);
+    background-color: var(--primary-color-7);
+    border: 1px solid var(--primary-color-3);
+    border-radius: 0.25rem;
+    width: 100%;
+    max-width: 100%;
+}

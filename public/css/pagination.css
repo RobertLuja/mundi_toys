@@ -1,0 +1,21 @@
+.page__link {
+    color: var(--dark-color-2) !important;
+    font-size: 14px;
+    border: 1px solid var(--primary-color-3) !important;
+    box-shadow: none !important;
+}
+
+.page__link:hover {
+    color: var(--primary-color-2) !important;
+    background-color: var(--primary-color-3) !important;
+    font-size: 14px;
+}
+
+.page__link:active {
+    box-shadow: 0 0 4px var(--primary-color-2) !important;
+}
+
+.page__link__disabled {
+    color: var(--dark-color-5) !important;
+    font-size: 14px;
+}

@@ -1,0 +1,137 @@
+/* Temas orientada a adultos */
+
+@import url("variables.css");
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1.dark, h2.dark, h3.dark, h4.dark, h5.dark {
+    color: var(--dark-color-2);
+}
+
+/*-----------------sidenav initial config */
+#sidenav.dark {
+    background-color: var(--dark-color-2);
+    box-shadow: 1px 0 4px var(--white-color-2);
+}
+
+.accordion-button.dark.collapsed {
+    color: var(--white-color-2) !important;
+}
+
+.accordion-button.dark:not(.collapsed) {
+    color: var(--white-color-2) !important;
+}
+
+.sidenav__btn__subitem.dark {
+    color: var(--white-color-2);
+}
+
+.sidenav__btn__subitem.dark:hover {
+    color: var(--dark-color-2);
+}
+/*-----------------end sidenav initial setup*/
+
+
+/*-----------------header initial config */
+#header.dark {
+    background-color: var(--dark-color-2);
+}
+
+#header.dark > div > #toggleButton {
+    background-image: url("../images/menu-50.png");
+}
+
+.dropdown__profile.dark, .name__user.dark {
+    color: var(--white-color-2);
+}
+
+.dropdown__item.dark:hover {
+    background-color: var(--dark-color-2);
+    border: 1px solid var(--white-color-2);
+}
+/*-----------------end header initial setup*/
+
+
+
+/*-----------------main initial config */
+/* #main.dark {
+    background-color: var(--dark-color-2);
+    color: var(--white-color-2);
+} */
+
+/* #main.dark > * {
+    background-color: var(--dark-color-2);
+    color: var(--white-color-2);
+} */
+/*-----------------end main initial setup*/
+
+
+
+/*-----------------footer initial config */
+#footer.dark {
+    background-color: var(--dark-color-2);
+    color: var(--white-color-2);
+}
+/*-----------------footer initial config */
+
+/*----------------- Inputs ---------------- */
+input[type=text].dark:focus,
+input[type=number].dark:focus,
+input[type=password].dark:focus,
+input[type=date].dark:focus,
+input[type=mail].dark:focus {
+    border: 2px solid var(--dark-color);
+    box-shadow: 0 0 4px var(--dark-color-2);
+}
+
+select.dark:focus {
+    border: 2px solid var(--dark-color) !important;
+    box-shadow: 0 0 4px var(--dark-color-2) !important;
+}
+
+textarea.dark:focus {
+    border: 2px solid var(--dark-color) !important;
+    box-shadow: 0 0 4px var(--dark-color-2) !important;
+}
+/*----------------- End inputs ---------------- */
+
+
+/*-------------------Pagination------------------*/
+.page__link.dark {
+    border: 1px solid var(--white-color-2) !important;
+}
+
+.page__link.dark:hover {
+    color: var(--white-color-2) !important;
+    background-color: var(--dark-color-2) !important;
+}
+
+.page__link.dark:active {
+    box-shadow: 0 0 4px var(--dark-color) !important;
+}
+/*-------------------End Pagination------------------*/
+
+/*---------------------Buttons------------------------*/
+.btn__primary.dark {
+    background-color: #2071f5;
+}
+
+.btn__primary.dark:hover:not([disabled]) {
+    background-color: #0362fc;
+}
+/*---------------------End Buttons------------------------*/
+
+/*-------------------Tables---------------------------*/
+.table-head.dark {
+    background-color: var(--dark-color-2);
+    border-bottom: hidden;
+}
+
+.table-head.dark tr {
+    color: var(--white-color-2);
+}
+
+/*-------------------End Tables---------------------------*/

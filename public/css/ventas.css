@@ -1,0 +1,190 @@
+#navheader {
+    width: 100%;
+    height: 120px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40px; /*height of header*/
+    z-index: 1;
+
+    /* display: flex;
+    justify-content: space-between; */
+    padding: 0 20px;
+}
+
+#navheader > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#mainContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mainContainerLeft {
+    padding: 10px;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#mainContainerRight {
+    background-color: #fff;
+    min-width: 20%;
+    max-height: calc(100% - 40px - 100px - 2*30px); /*100 - header - navheader - 2*footer*/
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px gray;
+    position: fixed;
+    right: 20px; /*10px padding del main principal + 10px agregados*/
+    overflow-y: auto;
+    display: block;
+}
+
+/*------------------------Personalizar el scroll del carrito---------------------------*/
+#mainContainerRight::-webkit-scrollbar {
+    width: 6px;     /* Tamaño del scroll en vertical */
+    height: 0px;    /* Tamaño del scroll en horizontal */
+}
+
+
+#mainContainerRight::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+    margin: 30px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+#mainContainerRight::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+#mainContainerRight::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+/*------------------------End Personalizar el scroll del carrito---------------------------*/
+
+.btn__cart {
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+.btn__cart:active {
+    transform: translateY(2px);
+}
+
+.btnAddProduct, .btnQuitProduct {
+    background-color: transparent;
+    border: none;
+}
+
+.btnAddProduct i:hover {
+    color: #376e37 !important;
+}
+
+.btnQuitProduct i:hover {
+    color: #cc0000 !important;
+}
+
+.btnAddProduct:active, .btnQuitProduct:active {
+    transform: translateY(1px);
+}
+
+.btnAddToCart {
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding-bottom: 4px;
+}
+
+.btnAddToCart:hover {
+    /* box-shadow: 0 0 4px gray; */
+    background-color: #376e37 !important;
+}
+
+.btnAddToCart:active {
+    transform: translateY(1px);
+}
+
+.cardButtonsAddAndQuit {
+    box-shadow: 0 0 2px #4a934a;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+#cardProducts {
+    width: 16rem;
+    box-shadow: 0 10px 10px rgb(128, 128, 128, 0.5);
+    border-radius: 25px;
+}
+
+#cardProducts > div > p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/*----------------RESPONSIVE-----------*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { /* Se aplica cuando va disminuyendo el tamaño de la pantalla*/
+    #mainContainerLeft {
+        width: 100%;
+    }
+
+    #mainContainerRight{
+        display: none;
+        max-height: calc(100% - 40px - 230px - 2*30px);
+    }
+
+    .btn__cart {
+        display: block;
+    }
+
+    #navheader {
+        display: block;
+        height: 230px;
+    }
+
+    #navheader > div {
+        display: block;
+    }
+}
+
+
+/*------------- A partir de este tamaño de abajo mostrar el carrito  -------------*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) { /* Se aplica cuando va subiendo el tamaño de la pantalla*/
+    #mainContainerLeft {
+        width: 60%;
+    }
+
+    #mainContainerRight {
+        display: block !important;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #mainContainerLeft {
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

@@ -1,0 +1,31 @@
+@import url("variables.css");
+
+/*----------------- Alerts---------------- */
+.alert__v2 {
+    width: 200px;
+    position: fixed !important;
+    
+    top: 45%;
+    left: 50%;
+    background-color: var(--white-color);
+    border-radius: 30px !important;
+    box-shadow: 0 0 6px var(--dark-color-3);;
+}
+
+.btn__ok__alert__v2 {
+    border: none;
+    color: var(--white-color);
+    font-weight: bold;
+    border-radius: 20px;
+    width: 50%;
+}
+
+.btn__ok__alert__v2:hover {
+    box-shadow: 0 0 6px var(--dark-color-3);
+}
+
+.btn__ok__alert__v2:active {
+    transform: translateY(2px);
+}
+
+/*----------------- End alerts---------------- */

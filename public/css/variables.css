@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat&family=Noto+Sans:wght@300&display=swap');
+
+:root {
+    /*---------------Colores----------------*/
+    --primary-color: #ff5f2f;
+    --primary-color-2: #f17829;
+    --primary-color-3: rgba(255, 139, 40, 0.5);
+    --primary-color-4: #ff8331;
+    --primary-color-5: rgba(255, 139, 40, 0.9);
+    --primary-color-6: rgba(255, 139, 40, 0.8);
+    --primary-color-7: rgba(255, 139, 40, 0.05);
+
+    --secondary-color: #4caf50;
+    --secondary-color-2: #408a42;
+
+    --danger-color: #c90339;
+    --danger-color-2: #860226;
+
+    --dark-color: #000;
+    --dark-color-2: #333;
+    --dark-color-3: gray;
+    --dark-color-4: rgba(245, 229, 207, 0.6);
+    --dark-color-5: rgba(51, 51, 51, 0.5);
+
+    --white-color: #fefefe;
+    --white-color-2: #eee;
+
+    /*------------------Colores para niños-------------------*/
+    --child-primary-color: #1a9c3d;
+    --child-primary-color-2: #268740;
+    --child-primary-color-3: rgba(38, 135, 64, 0.5);
+    --child-primary-color-4: #51b86c;
+
+    /*------------------Colores para adultos-------------------*/
+    --old-primary-color: #2d444f;
+    --old-primary-color-2: #334e5c;
+    --old-primary-color-3: rgba(51, 78, 92, 0.5);
+    --old-primary-color-4: #416070;
+
+    /*----------------Fuentes----------------*/
+    --font-arial: Arial, Helvetica, sans-serif;
+    --font-noto-sans: 'Noto Sans', sans-serif;
+    --font-georgia: Georgia, serif; /*font para niños*/
+    --font-system-ui: system-ui, sans-serif; /*font para adultos*/
+
+}

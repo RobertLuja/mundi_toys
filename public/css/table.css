@@ -1,0 +1,57 @@
+.table-head {
+    background-color: var(--primary-color-3);
+    border-bottom: hidden;
+}
+
+.table-head tr {
+    color: var(--primary-color);
+}
+
+.btn__option_show {
+    background-color: rgba(255, 139, 40, 0.8);
+    color: #fff;
+}
+
+.btn__option_edit {
+    background-color: rgba(48, 176, 129, 0.8);
+    color: #fff;
+}
+
+.btn__option_delete {
+    background-color: rgba(220, 20, 60, 0.8);
+    border: none;
+    color: #fff;
+}
+
+.btn__option_show:active {
+    background-color: rgb(255, 139, 40);
+}
+
+.btn__option_edit:active {
+    background-color: rgb(48, 176, 129);
+}
+
+.btn__option_delete:active {
+    background-color: rgb(220, 20, 60);
+}
+
+.btn__option_show:hover, 
+.btn__option_edit:hover,
+.btn__option_delete:hover {
+    box-shadow: 0 0 3px var(--dark-color-3);
+    color: var(--white-color);
+}
+
+.btn__option_show,
+.btn__option_edit {
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.btn__option_delete {
+    padding: 0.5px 3px;
+    border-radius: 8px;
+    font-size: 14px;
+}

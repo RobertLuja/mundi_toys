@@ -1,0 +1,179 @@
+/* Temas por defecto */
+
+@import url("variables.css");
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--primary-color-2);
+}
+
+/*-----------------sidenav initial config */
+#sidenav {
+    width: 230px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    font-family: var(--font-arial);
+    position: fixed;
+    overflow-y: auto;
+    transition: margin-left 0.5s ease-in-out;
+}
+
+.accordion-button.collapsed {
+    background-color: transparent;
+    height: 40px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    color: var(--dark-color-2) !important;
+    height: 40px;
+}
+
+/* Cuando el accordion no se abre (collapsed initial) | bi-chevron-right*/
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/%3e%3c/svg%3e");
+    order: -1;
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+/* Cuando el accordion se abre | bi-chevron-up --> mostrando el icon bi-chevron-down por la rotación de la animación*/
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z'/%3e%3c/svg%3e") !important;
+    order: -1;
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+.sidenav__btn__subitem {
+    width: 100%;
+    text-decoration: none;
+    color: var(--dark-color-2);
+    padding: 5px;
+}
+
+.sidenav__btn__subitem:hover {
+    color: var(--dark-color-2);
+    border-radius: 5px;
+    background-color: var(--dark-color-4);
+}
+/*-----------------end sidenav initial setup*/
+
+#container-right {
+    width: calc(100% - 230px);    
+    position: absolute;
+    right: 0;
+    transition: width 0.5s ease-in-out;
+    /* z-index: -1; */
+}
+
+/*-----------------header initial config */
+#header {
+    width: calc(100% - 230px);
+    height: 40px;
+    background-color: var(--white-color);
+    border-bottom: 2px solid var(--white-color-2);
+    color: var(--dark-color-2);
+    position: fixed;
+    font-family: var(--font-arial);
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+    z-index: 1;
+}
+
+#header > div > #toggleButton {
+    content: '';
+    background-image: url("../images/menu.png");
+    background-size:cover;
+    width:30px;
+    height:30px;
+    color: blue;
+}
+
+.dropdown__item {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    color: var(--dark-color);
+    font-weight: normal;
+    width:100%;
+}
+
+.dropdown__item:hover {
+    background-color: var(--primary-color-4);
+    color: var(--white-color);
+    border-radius: 20px;
+    border: 1px solid var(--primary-color-2);
+    font-weight: bold;
+}
+/*-----------------end header initial setup*/
+
+
+
+/*-----------------main initial config */
+#main {
+    min-height: calc(100vh - 40px - 30px);
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    padding: 10px;
+    margin-top: 40px;
+    font-family: var(--font-arial);
+}
+/*-----------------end main initial setup*/
+
+
+
+/*-----------------footer initial config */
+#footer {
+    height: 30px;
+    background-color: var(--white-color);
+    color: black;
+    border-top: 2px solid var(--white-color-2);
+    font-family: var(--font-arial);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*-----------------footer initial config */
+
+
+
+/* Ocultar y mostrar sidenav */
+#sidenav.open {
+    margin-left: -230px;
+}
+
+#sidenav.open + #container-right {
+    width: 100%;
+}
+
+#sidenav.open + #container-right > #header {
+    width: 100%;
+}
+
+/*----------------- Inputs ---------------- */
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=mail]:focus {
+    border: 2px solid var(--primary-color-3);
+    box-shadow: 0 0 4px var(--primary-color-2);
+}
+
+select:focus {
+    border: 2px solid var(--primary-color-3) !important;
+    box-shadow: 0 0 4px var(--primary-color-2) !important;
+}
+
+textarea:focus {
+    border: 2px solid var(--primary-color-3) !important;
+    box-shadow: 0 0 4px var(--primary-color-2) !important;
+}
+/*----------------- End inputs ---------------- */

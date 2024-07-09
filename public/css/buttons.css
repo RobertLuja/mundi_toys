@@ -1,0 +1,86 @@
+/*------------------------ custom buttons -----------------------*/
+
+/*----------------------------btn primary------------------------*/
+.btn__primary {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--primary-color-5);
+    color: var(--white-color);
+    padding: 4px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn__primary:hover:not([disabled]) {
+    background-color: var(--primary-color-2);
+    box-shadow: 0 0 3px var(--dark-color-3);
+    color: var(--white-color);
+}
+
+.btn__primary:active {
+    transform: translateY(2px);
+}
+
+.btn__primary:disabled {
+    opacity: 0.5;
+    transform: none;
+}
+
+/*----------------------------btn secondary------------------------*/
+.btn__secondary {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 4px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn__secondary:hover:not([disabled]) {
+    background-color: var(--secondary-color-2);
+    box-shadow: 0 0 3px var(--dark-color-3);
+    color: var(--white-color);
+}
+
+.btn__secondary:active {
+    transform: translateY(2px);
+}
+
+.btn__secondary:disabled {
+    opacity: 0.5;
+    transform: none;
+}
+
+/*----------------------------btn danger------------------------*/
+.btn__danger {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--danger-color);
+    color: var(--white-color);
+    padding: 4px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn__danger:hover:not([disabled]) {
+    background-color: var(--danger-color-2);
+    box-shadow: 0 0 3px var(--dark-color-3);
+    color: var(--white-color);
+}
+
+.btn__danger:active {
+    transform: translateY(2px);
+}
+
+.btn__danger:disabled {
+    opacity: 0.5;
+    transform: none;
+}
+/*------------------------ end custom buttons -----------------------*/
