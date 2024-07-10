@@ -12,6 +12,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 class PagoFacilController extends Controller
 {
@@ -80,7 +81,7 @@ class PagoFacilController extends Controller
                 "tnTelefono"            => "78048365",
                 'tcNombreUsuario'       => $venta->cliente->nombre.' '.$venta->cliente->apellido,
                 'tnCiNit'               => $venta->cliente->ci,
-                'tcNroPago'             => 'fact-mundi-'.$venta->id,
+                'tcNroPago'             => 'fact-mundi-'.$venta->id.Uuid::uuid4(),
                 "tnMontoClienteEmpresa" => $venta->precioTotal,
                 "tcCorreo"              => $venta->cliente->email,
                 'tcUrlCallBack'         => "http://localhost/",
