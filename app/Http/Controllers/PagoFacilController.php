@@ -183,7 +183,7 @@ class PagoFacilController extends Controller
     private function guardarImagen(string $imageBase64) {
         $client = new Client();
         $response = $client->post(
-            "http://localhost:3000/api/images/upload/base64",
+            "https://image-upload-utm5.onrender.com/api/images/upload/base64",
             [
                 "multipart" => [
                     [
@@ -200,7 +200,7 @@ class PagoFacilController extends Controller
     private function eliminarImagen(string $nameImage) {
         try{ //Se resuelve con un status code 204
             $client = new Client();
-            $response = $client->delete("http://localhost:3000/api/images/$nameImage");
+            $response = $client->delete("https://image-upload-utm5.onrender.com/api/images/$nameImage");
             $status = $response->getStatusCode();
             return $status;
         }catch (RequestException $e){ //Se resuelve con un status code 404 u otro
