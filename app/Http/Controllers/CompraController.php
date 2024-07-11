@@ -26,7 +26,7 @@ class CompraController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $compras = Compra::select('*')->cursorPaginate(10);
+        $compras = Compra::select('*')->paginate(10);
         return view("compras.index", compact("compras"));
     }
 

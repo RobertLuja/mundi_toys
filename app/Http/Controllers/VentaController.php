@@ -35,9 +35,9 @@ class VentaController extends Controller
         if($role->nombre == RoleEnum::Cliente->value){
             $ventas = Venta::whereRaw(
                                 'id_cliente = ?', [Auth::user()->id]
-                            )->cursorPaginate(5);
+                            )->paginate(10);
         }else{
-            $ventas = Venta::select('*')->cursorPaginate(5);
+            $ventas = Venta::select('*')->paginate(10);
         }
         return view("ventas.index", compact("ventas"));
     }

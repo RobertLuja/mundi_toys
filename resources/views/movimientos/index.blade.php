@@ -67,7 +67,7 @@
         </table>
 
         <div class="mb-3 me-3 d-flex justify-content-end">
-            {{ $movimientos->links() }}
+            {{ $movimientos->appends(Request::except("page"))->links() }}
         </div>
     </div>
 @endsection

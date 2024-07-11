@@ -16,7 +16,7 @@ class SucursalController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $sucursals = Sucursal::all();
+        $sucursals = Sucursal::select("*")->paginate(10);
         return view("sucursals.index", compact("sucursals"));
     }
 

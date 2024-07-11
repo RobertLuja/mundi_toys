@@ -26,7 +26,7 @@ class AlmacenController extends Controller
         }catch (AuthorizationException $e){
             return redirect()->route("home");
         }
-        $almacenes = Almacen::all();
+        $almacenes = Almacen::select("*")->paginate(10);
         return view("almacenes.index", compact("almacenes"));
     }
 

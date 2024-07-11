@@ -23,7 +23,7 @@ class TraspasoController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $traspasos = Traspaso::select('*')->cursorPaginate(10);
+        $traspasos = Traspaso::select('*')->paginate(10);
         return view("traspasos.index", compact("traspasos"));
     }
 

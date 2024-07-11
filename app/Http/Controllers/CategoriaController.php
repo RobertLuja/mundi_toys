@@ -16,7 +16,7 @@ class CategoriaController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $categorias = Categoria::all();
+        $categorias = Categoria::select("*")->paginate(10);
         return view("categorias.index", compact("categorias"));
     }
 

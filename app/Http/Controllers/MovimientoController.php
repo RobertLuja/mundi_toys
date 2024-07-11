@@ -16,7 +16,7 @@ class MovimientoController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $movimientos = Movimiento::select("*")->cursorPaginate(10);
+        $movimientos = Movimiento::select("*")->paginate(10);
         return view("movimientos.index", compact("movimientos"));
     }
 

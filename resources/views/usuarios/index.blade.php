@@ -89,7 +89,7 @@
         </table>
         
         <div class="mb-3 me-3 d-flex justify-content-end">
-            {{ $users->links() }}
+            {{ $users->appends(Request::except("page"))->links() }}
         </div>
     </div>
     

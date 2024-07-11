@@ -19,7 +19,7 @@ class ProductoController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $productos = Producto::all();
+        $productos = Producto::select("*")->paginate(10);
         return view("productos.index", compact("productos"));
     }
 

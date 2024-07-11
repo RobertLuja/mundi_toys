@@ -28,7 +28,7 @@ class UserController extends Controller
             return redirect()->route("dashboard.index");
         }
 
-        $users = User::select("*")->cursorPaginate(10);
+        $users = User::select("*")->paginate(10);
         return view("usuarios.index", compact("users"));
     }
 
