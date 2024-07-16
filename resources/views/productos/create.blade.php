@@ -27,7 +27,7 @@
 
                 <div class="form-group mb-4 mb-lg-0">
                     <label for="precio">Precio:</label>
-                    <input type="number" class="form-control @error('precio') is-invalid @enderror" id="precio" name="precio" value="{{ old('precio') }}" required>
+                    <input type="number" class="form-control @error('precio') is-invalid @enderror" id="precio" name="precio" value="{{ old('precio') }}" min="0" step="0.01" required>
                     @error('precio')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
