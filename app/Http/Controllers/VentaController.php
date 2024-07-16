@@ -30,9 +30,9 @@ class VentaController extends Controller
     public function index()
     {
         Gate::authorize("view-any");
-        $role = Role::find(Auth::user()->rol);
+        // $role = Role::find(Auth::user()->rol);
 
-        if($role->nombre == RoleEnum::Cliente->value){
+        if(Auth::user()->rol == RoleEnum::Cliente->value){
             $ventas = Venta::whereRaw(
                                 'id_cliente = ?', [Auth::user()->id]
                             )->paginate(10);
@@ -48,7 +48,7 @@ class VentaController extends Controller
     public function create()
     {
         Gate::authorize("create");
-        if(Role::find(Auth::user()->rol)->nombre == RoleEnum::Cliente->value){
+        if(Auth::user()->rol == RoleEnum::Cliente->value){
             $productos = Producto::all();
             $almacenes = Almacen::all();
             $cliente = Auth::user();
@@ -181,7 +181,7 @@ class VentaController extends Controller
                 "message" => "Cliente no encontrado",
             ]);
         }
-        if(Role::find($cliente->rol)->id != RoleEnum::Cliente->value){
+        if($cliente->rol != RoleEnum::Cliente->value){
             return response()->json([
                 "status" => 400,
                 "message" => "El usuario no es un cliente",
