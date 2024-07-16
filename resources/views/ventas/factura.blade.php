@@ -168,6 +168,18 @@
             containerEfectivo.style.display = "none";
         }
 
+        function showAlertSuccess(title, message){
+            const alertSuccess = `
+                            <x-alert2
+                                icon="bi bi-check-circle-fill"
+                                color="#4caf50"
+                                title="${title}"
+                                description="${message}"
+                            />
+                            `;
+            return alertSuccess;
+        }
+
         function showAlertError(message){
             const alertError = `
                     <x-alert

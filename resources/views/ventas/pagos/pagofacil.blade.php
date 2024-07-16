@@ -3,7 +3,7 @@
     <div
         class="text-center d-flex flex-column justify-content-center"
         style="border: 2px solid var(--primary-color); border-radius: 10px;">
-        <span id="qrImgPagoFacilLoad"></span>
+        <span class="fw-bold" id="qrImgPagoFacilLoad"></span>
         <img src="" alt="no-image" srcset="" id="qrImgPagoFacilLoaded">
         <input 
             type="text"
@@ -122,6 +122,11 @@
                 console.log(result);
             }else if(result.status == 200){
                 document.getElementById("containerAlert").innerHTML = showAlertError(result.data.values.messageEstado);
+            }else if(result.status == 201){
+                document.getElementById("containerAlert").innerHTML = showAlertSuccess("Pago OK!", result.data);
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
             }
 
         })
