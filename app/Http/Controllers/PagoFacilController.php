@@ -7,10 +7,9 @@ use App\Models\PagoFacil;
 use App\Models\Venta;
 use Carbon\Carbon;
 use DateTime;
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\RequestOptions;
+use GuzzleHttp\Exception\TransferException;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
@@ -93,7 +92,8 @@ class PagoFacilController extends Controller
                 $lcUrl,
                 [
                     'headers' => $laHeader,
-                    'json' => $laBody
+                    'json' => $laBody,
+                    'timeout' => 30.0
                 ]
             );
 
@@ -140,9 +140,18 @@ class PagoFacilController extends Controller
                 ]
             ]);
             //echo '<img src="' . $laQrImage . '" alt="Imagen base64">';
-        } catch (\Throwable $th) {
+        } catch (TransferException $e) {
 
-            return $th->getMessage() . " - " . $th->getLine();
+            //return $th->getMessage() . " - " . $th->getLine();
+            if(stripos($e->getMessage(), 'timed out') !== false)
+                return response()->json([
+                    "status" => 400,
+                    "message" => "No se pudo generar el QR, tiempo de espera terminado"
+                ]);
+            return response()->json([
+                "status" => 400,
+                "message" => "Error de transferencia".$e->getCode()
+            ]);
         }
     }
 
@@ -166,6 +175,13 @@ class PagoFacilController extends Controller
         if($fechaLimite >= $fechaActual)
             return true;
         return false;
+    }
+
+    public function anularQR($id) {
+        $venta = Venta::customDetalleVentas($id);
+        if($venta->pagoFacil != null) {
+            $this->actualizarEstadoTransaccion($venta->pagoFacil->id, $venta->pagoFacil->name_image);
+        }
     }
 
     public function actualizarEstadoTransaccion($idPagoFacil, $nameImage) {
@@ -252,6 +268,16 @@ class PagoFacilController extends Controller
                     //Realizar que la venta sea como procesado, finalizar la compra
                     //Enviar correo de confirmación
                     //Otras acciones
+                    //Cambiamos el estado de la venta
+                    $ventaController = new VentaController();
+                    $ventaConfirmado = $ventaController->cambiarEstadoFactura(
+                                                        $venta->id,
+                                                        EstadoEnum::Procesado->value
+                                                    );
+                    return response()->json([
+                        "status" => 201,
+                        "data" => "Pago realizado correctamente"
+                    ]);
                 }
                 return response()->json([
                     "status" => 200,

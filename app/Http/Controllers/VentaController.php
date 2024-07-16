@@ -24,6 +24,14 @@ use Illuminate\Support\Facades\Gate;
 
 class VentaController extends Controller
 {
+
+    private PagoFacilController $pagoFacilController;
+
+    public function __construct()
+    {
+        $this->pagoFacilController = new PagoFacilController();
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -125,11 +133,7 @@ class VentaController extends Controller
         $venta = $this->cambiarEstadoFactura($id, EstadoEnum::Anulado->value);
         
         /**TODO: Cambiar el estado de la trasacción pagoFacil */
-        $pagoFacilController = new PagoFacilController();
-        $venta = Venta::customDetalleVentas($id);
-        if($venta->pagoFacil != null) {
-            $pagoFacilController->actualizarEstadoTransaccion($venta->pagoFacil->id, $venta->pagoFacil->name_image);
-        }
+        $this->pagoFacilController->anularQR($venta->id);
 
         return redirect()->route("ventas.show", compact("venta"))->with("info", "La factura fue anulada correctamente");
     }
@@ -137,7 +141,7 @@ class VentaController extends Controller
     public function pagoEfectivo(string $id) { //Se confirma el pago en efectivo
         Gate::authorize("metodo-pago");
         $venta = $this->cambiarEstadoFactura($id, EstadoEnum::Procesado->value);
-
+        $this->pagoFacilController->anularQR($venta->id);
         return redirect()->route("ventas.show", compact("venta"))->with("info", "Pago confirmado correctamente!");
     }
 
